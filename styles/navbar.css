@@ -1,0 +1,85 @@
+nav.main-navbar{
+    background: transparent !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .5s;
+}
+
+.main-navbar .navbar-brand{
+    font-size: 1.5em;
+    color: white;
+    font-family: "Baloo 2";
+    font-weight: bold;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.main-navbar .nav-item{
+    font-size: 13pt;
+    padding: 10px 10px;
+    transition: .4s;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: white !important;
+}
+
+.main-navbar .nav-item.active .nav-link{
+    font-weight: bold;
+    color: #FFDA40;
+}
+
+.nav-item .dropdown-item{
+    font-size: 11pt;
+    padding:10px 30px;
+}
+
+.btn-register{
+    background: #FFDA40;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.navbar-brand b{
+    color: #FFDA40;
+    font-family: 'Baloo 2';
+}
+
+.main-navbar.scrolled{
+    background: #444 !important;
+}
+
+.navbar-brand i{
+    color: #FFDA40;
+    background-color: #fff;
+    padding:10px;
+    border-radius: 100px;
+}
+
+@media only screen and (min-width: 992px) {
+    nav.main-navbar{
+        background: transparent !important;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .main-navbar .navbar-brand{
+        font-size: 1.8em;
+    }
+
+    .main-navbar .nav-item{
+        padding: 20px 30px;
+    }
+
+    .dropdown-menu{
+        border:none;
+        box-shadow: 0px 5px 20px -10px rgba(0,0,0,.3);
+        margin-top: -10px
+    }
+
+    .dropdown-menu .dropdown-item:hover{
+        background: #FFDA40;
+    }
+}

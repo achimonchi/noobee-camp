@@ -1,0 +1,31 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #f8f8f8;
+    color:#444;
+    min-height: 1500px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.text-header{
+    font-size: 1.6rem;
+}
+
+.btn-filled{
+    color: #444;
+    background: #FFDA40;
+    border:none;
+}
+
+.btn-filled:hover{
+    box-shadow: 0px 5px 20px rgba(206, 155, 53, 0.5);
+}
