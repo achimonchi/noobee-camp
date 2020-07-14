@@ -20,6 +20,12 @@ nav.main-navbar{
     font-size: 13pt;
     padding: 10px 10px;
     transition: .4s;
+
+    align-self: flex-end;
+}
+
+.navbar-brand .logo{
+    width: 64px;
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -40,6 +46,12 @@ nav.main-navbar{
     background: #FFDA40;
     text-align: center;
     border-radius: 5px;
+    color: #444444 !important;
+}
+
+.navbar-light .navbar-nav .btn-register {
+    color: #444 !important;
+    padding:16px 32px ;
 }
 
 .navbar-brand b{
@@ -65,8 +77,17 @@ nav.main-navbar{
         padding-right: 50px;
     }
 
+    .navbar-brand .logo{
+        width: 80px;
+    }
+
     .main-navbar .navbar-brand{
         font-size: 1.8em;
+    }
+
+    .main-navbar .nav-item{
+    
+        align-self: center;
     }
 
     .main-navbar .nav-item{
@@ -103,22 +124,52 @@ ul{
 }
 
 .text-header{
-    font-size: 1.6rem;
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
 .btn-filled{
     color: #444;
     background: #FFDA40;
     border:none;
+    padding:16px 32px !important;
+    font-size: 1.2em;
 }
 
 .btn-filled:hover{
     box-shadow: 0px 5px 20px rgba(206, 155, 53, 0.5);
 }
 
+p{
+    line-height: 150%;
+}
+
+@media only screen and (min-width: 768px){
+    p{
+        font-size: 1.1em;
+    }
+
+    .text-header{
+        font-size: 2.3em;
+    }
+}
+
+@media only screen and (min-width: 1290px){
+    p{
+        font-size: 1.2em;
+    }
+
+    .text-header{
+        font-size: 3em;
+    }
+}
+
+
+
 .banner{
     color : white;
-    height: 80vh;
+    height: 30vw;
+    min-height: 500px;
     background-image: url('/images/bg-banner.jpg');
 }
 
@@ -145,7 +196,7 @@ ul{
 }
 
 .banner-wrapper{
-    margin-top: 10em;
+    margin-top: 50%;
 }
 
 
@@ -156,7 +207,7 @@ ul{
     margin: 0;
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(20, 102, 143, .3);
-    margin-top: -10vh;
+    margin-top: -5vw;
 }
 
 .mini-banner .icon-mini-banner{
@@ -229,20 +280,28 @@ ul{
     color: #FFDA40;
 }
 
+.text-header{
+    
+}
+
+/* program section */
+.program-section{
+    margin-top: 50px 20px;
+}
+
 @media only screen and (min-width: 768px) {
     .banner-wrapper{
-        margin-top: 20em;
+        margin-top: 12em;
     }
+
     .text-banner {
-        font-size: 3em !important;
+        font-size: 2.3em !important;
         text-align: center;
     }
 
     .sub-text-banner{
         text-align: center;
     }
-
-    /* mini-banner section */
     .mini-banner{
         text-align: center;
         margin-top: -8vh;
@@ -254,7 +313,7 @@ ul{
     }
 
     .mini-banner .icon-mini-banner{
-        width: 64px;
+        width: 48px;
         margin-right: 0;
     }
 
@@ -282,7 +341,7 @@ ul{
     }
 
     .text-header{
-        font-size: 2rem;
+        /* font-size: 2.3em; */
     }
 
     /* quotes section */
@@ -293,5 +352,24 @@ ul{
 
     .quotes-section .text-quotes{
         font-size: 24pt;
+    }
+}
+
+@media only screen and (min-width: 1290px) {
+    .text-banner {
+        font-size: 3em !important;
+    }
+
+    .text-header{
+        /* font-size: 3em; */
+    }
+
+    .quotes-section .text-quotes{
+        font-size: 2.3em;
+    }
+
+    /* mini-banner section */
+    .mini-banner .icon-mini-banner{
+        width: 64px;
     }
 }

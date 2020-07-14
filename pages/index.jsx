@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import '../styles/index.css';
 import Link from 'next/link';
 
+import {useState} from 'react'
+
 const _banner = () =>{
     return (
         <div className="banner">
@@ -70,7 +72,7 @@ const _about=()=>{
                                     <div className="text-about">
                                         <h2 className="text-header">Apa sih, NooBee<b>Camp</b> itu ?</h2>
                                         <p className="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid laboriosam illo incidunt culpa, tempore perferendis ipsa laudantium, cumque iusto officia iste sint velit temporibus eum. Ad, labore. Autem, dolorum blanditiis!Possimus officiis quas cupiditate doloribus delectus magnam repellat dignissimos odio, nulla unde laborum culpa itaque voluptatum! Sunt veritatis natus at quas itaque maxime eaque, fugiat fuga dolores hic est doloribus.</p>
-                                        <Link href="/daftar"><a className="btn btn-filled btn-full btn-about">Daftar Sekarang</a></Link>
+                                        <Link href="/registrasi"><a className="btn btn-filled btn-full btn-about">Daftar Sekarang</a></Link>
                                     </div>
                                 </div>
                             </div>
@@ -87,8 +89,23 @@ const _quotes=()=>{
         <div className="quotes-section">
             <div className="container-fluid">
                 <div className="row justify-content-center">
-                    <div className="col-md-5">
+                    <div className="col-xl-8">
                         <h1 className="text-quotes text-center">"Ilmu Pengetahuan Adalah <span>Investasi</span> Jangka Panjang Terbaik"</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const _program=(props)=>{
+
+    return(
+        <div className="program-section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md">
+                        <h2 className="text-header text-center">Program yang ada di NooBeeCamp</h2>
                     </div>
                 </div>
             </div>
@@ -98,6 +115,20 @@ const _quotes=()=>{
 
 
 const Index = (props) =>{
+    const [program, setProgram] = useState([
+        {
+            title : "Kelas Design",
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+        },
+        {
+            title : "Kelas Programming",
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+        },
+        {
+            title : "Kelas Bahasa Inggris",
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+        },
+    ])
     return(
         <Layout activeClass={props.url.pathname}>
             <div className="wrapper">
@@ -105,6 +136,9 @@ const Index = (props) =>{
                 <_miniBanner/>
                 <_about/>
                 <_quotes/>
+                <_program
+                    program={program}
+                />
             </div>
         </Layout>
     )

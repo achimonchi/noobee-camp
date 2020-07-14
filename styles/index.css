@@ -1,6 +1,7 @@
 .banner{
     color : white;
-    height: 80vh;
+    height: 30vw;
+    min-height: 500px;
     background-image: url('/images/bg-banner.jpg');
 }
 
@@ -27,7 +28,7 @@
 }
 
 .banner-wrapper{
-    margin-top: 10em;
+    margin-top: 50%;
 }
 
 
@@ -38,7 +39,7 @@
     margin: 0;
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(20, 102, 143, .3);
-    margin-top: -10vh;
+    margin-top: -5vw;
 }
 
 .mini-banner .icon-mini-banner{
@@ -111,20 +112,28 @@
     color: #FFDA40;
 }
 
+.text-header{
+    
+}
+
+/* program section */
+.program-section{
+    margin-top: 50px 20px;
+}
+
 @media only screen and (min-width: 768px) {
     .banner-wrapper{
-        margin-top: 20em;
+        margin-top: 12em;
     }
+
     .text-banner {
-        font-size: 3em !important;
+        font-size: 2.3em !important;
         text-align: center;
     }
 
     .sub-text-banner{
         text-align: center;
     }
-
-    /* mini-banner section */
     .mini-banner{
         text-align: center;
         margin-top: -8vh;
@@ -136,7 +145,7 @@
     }
 
     .mini-banner .icon-mini-banner{
-        width: 64px;
+        width: 48px;
         margin-right: 0;
     }
 
@@ -164,7 +173,7 @@
     }
 
     .text-header{
-        font-size: 2rem;
+        /* font-size: 2.3em; */
     }
 
     /* quotes section */
@@ -175,5 +184,24 @@
 
     .quotes-section .text-quotes{
         font-size: 24pt;
+    }
+}
+
+@media only screen and (min-width: 1290px) {
+    .text-banner {
+        font-size: 3em !important;
+    }
+
+    .text-header{
+        /* font-size: 3em; */
+    }
+
+    .quotes-section .text-quotes{
+        font-size: 2.3em;
+    }
+
+    /* mini-banner section */
+    .mini-banner .icon-mini-banner{
+        width: 64px;
     }
 }

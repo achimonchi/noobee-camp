@@ -53,6 +53,8 @@ const Navbar=({activeClass})=>{
             } else {
                 setNavbar("navbar navbar-expand-lg navbar-light bg-light main-navbar fixed-top")
             }
+
+            console.log(window.innerWidth)
         }
 
 
@@ -60,7 +62,7 @@ const Navbar=({activeClass})=>{
 
     return(
         <nav className={navbar}>
-            <Link href="/#" ><a className="navbar-brand">NooBee<b>Camp</b> <i className="fas fa-bug"></i></a></Link>
+            <Link href="/"><a className="navbar-brand"><img className="logo" src="/images/logo.svg"/> NooBee<b>Camp</b></a></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -84,7 +86,7 @@ const Navbar=({activeClass})=>{
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link btn-register text-dark" href="#">Daftar Sekarang</a>
+                        <Link href="/registrasi"><a className="nav-link btn-register text-dark" href="#">Daftar Sekarang</a></Link>
                     </li>
                 </ul>
             </div>

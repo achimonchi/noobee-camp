@@ -20,6 +20,12 @@ nav.main-navbar{
     font-size: 13pt;
     padding: 10px 10px;
     transition: .4s;
+
+    align-self: flex-end;
+}
+
+.navbar-brand .logo{
+    width: 64px;
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -40,6 +46,12 @@ nav.main-navbar{
     background: #FFDA40;
     text-align: center;
     border-radius: 5px;
+    color: #444444 !important;
+}
+
+.navbar-light .navbar-nav .btn-register {
+    color: #444 !important;
+    padding:16px 32px ;
 }
 
 .navbar-brand b{
@@ -65,8 +77,17 @@ nav.main-navbar{
         padding-right: 50px;
     }
 
+    .navbar-brand .logo{
+        width: 80px;
+    }
+
     .main-navbar .navbar-brand{
         font-size: 1.8em;
+    }
+
+    .main-navbar .nav-item{
+    
+        align-self: center;
     }
 
     .main-navbar .nav-item{
