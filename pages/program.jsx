@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Layout from '../components/Layout'
 import Link from 'next/link';
 
+import {capitalize, toLowerCase} from './../components/helper/string'
+
 const _banner = ({kelas}) =>{
     const date = new Date();
     const day = date.getDay();
@@ -19,7 +21,7 @@ const _banner = ({kelas}) =>{
                     <div className="row justify-content-center">
                         <div className="col-md-7 text-center">
                             <div className="banner-wrapper">
-                                    <h1 className="mt-5 text-banner"><b>Kelas <span>{kelas}</span></b></h1>
+                                    <h1 className="mt-5 text-banner"><b>Kelas <span>{capitalize(kelas)}</span></b></h1>
                                     <h4 className="sub-text-banner mt-4"><i>Program <b>Batch #1</b><br/>Periode <b>Oktober - Desember</b></i></h4>
                             </div>
                         </div>
@@ -38,11 +40,11 @@ const Program = (props) => {
 
     useEffect(()=>{
         async function setData(){
-            const list = ["IT", "Design", "Others"]
+            const list = ["it", "design", "others"]
             setClassName(props.url.query.kelas)
             setListClass(list);
 
-            const flag = await list.find((l)=>{return props.url.query.kelas == l})
+            const flag = await list.find((l)=>{return toLowerCase(props.url.query.kelas) == toLowerCase(l)})
             if(!flag){
                 setNotFound(true);
             } else {

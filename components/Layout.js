@@ -6,6 +6,7 @@ import '../styles/Style.css'
 const Layout = (props) =>(
     <div>
         <Head>
+            <link rel="icon" href="/images/icon.ico" type="image/ico" sizes="128x128"/> 
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>NooBeeCamp</title>
             {/* link fontawesome */}

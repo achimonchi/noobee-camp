@@ -82,7 +82,7 @@ const Navbar=({activeClass})=>{
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <Link href="/program?kelas=IT"><a className="dropdown-item" href="#">Kelas IT</a></Link>
                             <Link href="/program?kelas=Design"><a className="dropdown-item" href="#">Kelas Design</a></Link>
-                            <Link href="/program?kelas=other"><a className="dropdown-item" href="#">Kelas Lainnya</a></Link>
+                            <Link href="/program?kelas=Others"><a className="dropdown-item" href="#">Kelas Lainnya</a></Link>
                         </div>
                     </li>
                     <li className="nav-item">

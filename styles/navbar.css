@@ -29,11 +29,16 @@ nav.main-navbar{
 
 .navbar-light .navbar-nav .nav-link{
     color: white !important;
+    transition: .2s;
 }
 
 .main-navbar .nav-item.active .nav-link{
     font-weight: bold;
-    color: #FFDA40;
+    color: #FFDA40 !important;
+}
+
+.main-navbar .nav-item:hover .nav-link{
+    font-weight: bold;
 }
 
 .nav-item .dropdown-item{
@@ -60,6 +65,7 @@ nav.main-navbar{
 
 .main-navbar.scrolled{
     background: #444 !important;
+    box-shadow: 0px 40px 20px -30px rgba(0,0,0,.2);
 }
 
 .navbar-brand i{

@@ -36,13 +36,13 @@ const _miniBanner=()=>{
                             <div className="col-md-4">
                                 <div className="mini-icon">
                                     <img className="icon-mini-banner" src="/images/user.svg" alt="user"/>
-                                    <h3 className="text-mini-banner mt-4"><b>100</b> Peserta</h3>
+                                    <h3 className="text-mini-banner mt-4"><b>0</b> Peserta</h3>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="mini-icon">
                                     <img className="icon-mini-banner" src="/images/bag.svg" alt=""/>
-                                    <h3 className="text-mini-banner mt-4"><b>30</b> Portfolio</h3>
+                                    <h3 className="text-mini-banner mt-4"><b>0</b> Portfolio</h3>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -70,10 +70,13 @@ const _about=()=>{
                                 <div className="col-md-5">
                                     <img src="/images/bg-about.png" alt="about" className="img-about"/>
                                 </div>
-                                <div className="col-md-6 offset-md-1">
+                                <div className="col-md-5 offset-md-2">
                                     <div className="text-about">
                                         <h2 className="text-header">Apa sih, NooBee<b>Camp</b> itu ?</h2>
-                                        <p className="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid laboriosam illo incidunt culpa, tempore perferendis ipsa laudantium, cumque iusto officia iste sint velit temporibus eum. Ad, labore. Autem, dolorum blanditiis!Possimus officiis quas cupiditate doloribus delectus magnam repellat dignissimos odio, nulla unde laborum culpa itaque voluptatum! Sunt veritatis natus at quas itaque maxime eaque, fugiat fuga dolores hic est doloribus.</p>
+                                        <p className="mt-3">
+                                            NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh <b><i><a href="http://noobee.id/" target="_blank">NooBeeID</a></i></b>.
+                                            Dengan kurikulum yang selalu <b>up-to-date</b>, sehingga masyarakat mampu untuk bersaing di dunia kerja.
+                                        </p>
                                         <Link href="/registrasi"><a className="btn btn-filled btn-full btn-about">Daftar sekarang</a></Link>
                                     </div>
                                 </div>
@@ -130,7 +133,7 @@ const _program=(props)=>{
 }
 
 const _time=()=>{
-    
+
 }
 
 
@@ -138,19 +141,19 @@ const Index = (props) =>{
     const [program, setProgram] = useState([
         {
             title : "Kelas Design",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            desc : "Belajar design adalah suatu hal yang wajib rasanya, mengingat kondisi zaman sekarang yang serba digital. Nah, kelas ini merupakan kelas untuk belajar design, dari 0.",
             link:"/program?kelas=design",
             img:"design.jpg"
         },
         {
-            title : "Kelas Programming",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            title : "Kelas IT",
+            desc : "Pengen belajar IT? Disini terdapat berbagai macam kelas yang berhubungan dengan IT, seperti programming, networking, dll. Buat kamu yang masih pemula, kelas ini cocok karena akan selalu dibimbing oleh mentor.",
             link:"/program?kelas=IT",
             img:"programming.jpg"
         },
         {
             title : "Kelas Bahasa Inggris",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            desc : "Bahasa inggris saat ini merupakan syarat wajib untuk interview kerja. Dengan mengusung konsep diskusi, kelas ini memudahkan kamu untuk menghafal grammer sekaligus pronunciation-nya.",
             link:"/program?kelas=english",
             img:"english.jpg"
         },

@@ -87,6 +87,10 @@
     text-align: center;
 }
 
+.text-about a{
+    color: #444;
+}
+
 .text-about p{
     text-align: justify;
 }
@@ -118,10 +122,6 @@
 /* program section */
 .program-section{
     margin-top: 50px 20px;
-}
-
-.card-body{
-    /* padding:0 !important; */
 }
 
 .img-card{
@@ -217,10 +217,6 @@
 @media only screen and (min-width: 1290px) {
     .text-banner {
         font-size: 3em !important;
-    }
-
-    .text-header{
-        /* font-size: 3em; */
     }
 
     .quotes-section .text-quotes{
