@@ -1,1 +1,0 @@
-{"name":"belajar","version":"1.0.0","description":"","main":"index.js","scripts":{"dev":"next","build":"next build","start":"next start"},"author":"","license":"ISC","dependencies":{"@zeit/next-css":"^1.0.1","next":"^9.4.4","next-images":"^1.4.0","react":"^16.13.1","react-dom":"^16.13.1"},"readme":"ERROR: No README data found!","_id":"belajar@1.0.0"}
