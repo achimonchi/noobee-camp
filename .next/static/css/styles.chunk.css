@@ -132,8 +132,8 @@ ul{
     color: #444;
     background: #FFDA40;
     border:none;
-    padding:16px 32px !important;
-    font-size: 1.2em;
+    padding:12px 24px !important;
+    font-size: 1em;
 }
 
 .btn-filled:hover{
@@ -152,6 +152,12 @@ p{
     .text-header{
         font-size: 2.3em;
     }
+
+    .btn-filled{
+        padding:14px 28px !important;
+        font-size: 1.1em;
+    }
+    
 }
 
 @media only screen and (min-width: 1290px){
@@ -162,6 +168,10 @@ p{
     .text-header{
         font-size: 3em;
     }
+    .btn-filled{
+        padding:16px 32px !important;
+        font-size: 1.2em;
+    }
 }
 
 
@@ -171,6 +181,9 @@ p{
     height: 30vw;
     min-height: 500px;
     background-image: url('/images/bg-banner.jpg');
+    background-attachment: fixed !important;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner span{
@@ -280,13 +293,33 @@ p{
     color: #FFDA40;
 }
 
-.text-header{
-    
-}
-
 /* program section */
 .program-section{
     margin-top: 50px 20px;
+}
+
+.card-body{
+    /* padding:0 !important; */
+}
+
+.img-card{
+    margin:0;
+    padding:0;
+    min-height: 250px;
+    background-position-y: center;
+    background-position-x: left;
+    border-radius: 10px 10px 0 0;
+}
+
+.card{
+    border-radius: 10px;
+    border:1px solid rgba(44, 44, 44, 0.1);
+    transition: .3s;
+    margin-top: 30px !important;
+}
+
+.card:hover{
+    box-shadow: 0px 40px 30px -20px rgba(44, 44, 44, 0.2);
 }
 
 @media only screen and (min-width: 768px) {
@@ -340,10 +373,6 @@ p{
         text-align: right;
     }
 
-    .text-header{
-        /* font-size: 2.3em; */
-    }
-
     /* quotes section */
     .quotes-section{
         margin: 50px;
@@ -352,6 +381,14 @@ p{
 
     .quotes-section .text-quotes{
         font-size: 24pt;
+    }
+
+    /* program section */
+    .program-section{
+        margin: 50px;
+        padding: 50px;
+        margin-top: 100px;
+        margin-bottom: 50px;
     }
 }
 

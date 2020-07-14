@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import '../styles/index.css';
 import Link from 'next/link';
 
+import Card from './../components/Card';
+
 import {useState} from 'react'
 
 const _banner = () =>{
@@ -72,7 +74,7 @@ const _about=()=>{
                                     <div className="text-about">
                                         <h2 className="text-header">Apa sih, NooBee<b>Camp</b> itu ?</h2>
                                         <p className="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid laboriosam illo incidunt culpa, tempore perferendis ipsa laudantium, cumque iusto officia iste sint velit temporibus eum. Ad, labore. Autem, dolorum blanditiis!Possimus officiis quas cupiditate doloribus delectus magnam repellat dignissimos odio, nulla unde laborum culpa itaque voluptatum! Sunt veritatis natus at quas itaque maxime eaque, fugiat fuga dolores hic est doloribus.</p>
-                                        <Link href="/registrasi"><a className="btn btn-filled btn-full btn-about">Daftar Sekarang</a></Link>
+                                        <Link href="/registrasi"><a className="btn btn-filled btn-full btn-about">Daftar sekarang</a></Link>
                                     </div>
                                 </div>
                             </div>
@@ -102,10 +104,24 @@ const _program=(props)=>{
 
     return(
         <div className="program-section">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-md">
                         <h2 className="text-header text-center">Program yang ada di NooBeeCamp</h2>
+                        <div className="row">
+                            {props.program.map((p,i)=>(
+                                <div className="col-md-4">
+                                    <Card
+                                        className="card mt-4"
+                                        key={i} 
+                                        title={p.title}
+                                        desc={p.desc}
+                                        link={p.link}
+                                        img={p.img}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,15 +134,21 @@ const Index = (props) =>{
     const [program, setProgram] = useState([
         {
             title : "Kelas Design",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            link:"/program?kelas=design",
+            img:"design.jpg"
         },
         {
             title : "Kelas Programming",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            link:"/program?kelas=IT",
+            img:"programming.jpg"
         },
         {
             title : "Kelas Bahasa Inggris",
-            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod."
+            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus, vel. Non est sapien imperdiet amet tincidunt euismod.",
+            link:"/program?kelas=english",
+            img:"english.jpg"
         },
     ])
     return(
