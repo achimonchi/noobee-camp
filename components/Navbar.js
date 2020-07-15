@@ -85,7 +85,7 @@ const Navbar=({activeClass})=>{
                         </div>
                     </li>
                     <li className="nav-item">
-                        <Link href="/registrasi"><a className="nav-link btn-register text-dark" href="#">Daftar sekarang</a></Link>
+                        <Link href="#"><a rel="noopener" target="_blank" href="https://forms.gle/enUQxF35nfJzsDhJ6" className="nav-link btn-register text-dark">Daftar sekarang</a></Link>
                     </li>
                 </ul>
             </div>

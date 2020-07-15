@@ -16,7 +16,6 @@
     "next-ga": "^2.3.4",
     "next-images": "^1.4.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-ga": "^3.1.2"
+    "react-dom": "^16.13.1"
   }
 }
