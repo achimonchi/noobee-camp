@@ -68,7 +68,7 @@ const _about=()=>{
                         <div className="about">
                             <div className="row">
                                 <div className="col-md-5">
-                                    <img  alt="about" src="/images/bg-about.png" alt="about" className="img-about"/>
+                                    <img  alt="about" src="/images/bg-about.webp" alt="about" className="img-about"/>
                                 </div>
                                 <div className="col-md-5 offset-md-2">
                                     <div className="text-about">
@@ -143,19 +143,19 @@ const Index = (props) =>{
             title : "Kelas Design",
             desc : "Belajar design adalah suatu hal yang wajib rasanya, mengingat kondisi zaman sekarang yang serba digital. Nah, kelas ini merupakan kelas untuk belajar design, dari 0.",
             link:"/program?kelas=design",
-            img:"design.jpg"
+            img:"design.webp"
         },
         {
             title : "Kelas IT",
             desc : "Pengen belajar IT? Disini terdapat berbagai macam kelas yang berhubungan dengan IT, seperti programming, networking, dll. Buat kamu yang masih pemula, kelas ini cocok karena akan selalu dibimbing oleh mentor.",
             link:"/program?kelas=IT",
-            img:"programming.jpg"
+            img:"programming.webp"
         },
         {
             title : "Kelas Bahasa Inggris",
             desc : "Bahasa inggris saat ini merupakan syarat wajib untuk interview kerja. Dengan mengusung konsep diskusi, kelas ini memudahkan kamu untuk menghafal grammer sekaligus pronunciation-nya.",
             link:"/program?kelas=english",
-            img:"english.jpg"
+            img:"english.webp"
         },
     ])
     return(

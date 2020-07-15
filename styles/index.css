@@ -2,7 +2,7 @@
     color : white;
     height: 30vw;
     min-height: 500px;
-    background-image: url('/images/bg-banner.jpg');
+    background-image: url('/images/bg-banner.webp');
     background-attachment: fixed !important;
     background-repeat: no-repeat;
     background-size: cover;
