@@ -62,7 +62,7 @@ const _search_bar=(props)=>{
                                         <button 
                                         type="submit"
                                         className="btn input-group-text bg-filled" 
-                                        id="basic-addon2"><i className="fas fa-search"></i> &nbsp; Cari materi</button>
+                                        id="basic-addon2"><img alt="search icon" src="/images/icon/search.svg" /> <span className="text-btn-search">&nbsp; Cari materi</span></button>
                                     </div>
                                 </div>
                             </form>

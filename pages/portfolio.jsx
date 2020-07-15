@@ -40,7 +40,10 @@ const _search_bar=()=>{
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder="Cari Nama Peserta Bootcamp" aria-label="Cari Nama Peserta Bootcamp" aria-describedby="basic-addon2" />
                                 <div className="input-group-append">
-                                    <span className="input-group-text bg-filled" id="basic-addon2"><i className="fas fa-search"></i> &nbsp; Cari</span>
+                                    <button 
+                                        type="submit"
+                                        className="btn input-group-text bg-filled" 
+                                        id="basic-addon2"><img src="/images/icon/search.svg" /> <span className="text-btn-search">&nbsp; Cari portfolio</span></button>
                                 </div>
                             </div>
                         </div>

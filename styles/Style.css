@@ -25,6 +25,11 @@ ul{
     font-weight: bold;
 }
 
+.sub-text-header{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 .btn-filled{
     color: #444;
     background: #FFDA40;
@@ -139,6 +144,81 @@ p{
     transform: scale(1.1);
 }
 
+.search-bar{
+    background-color: white;
+    padding: 20px;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(143, 107, 7, 0.3);
+    margin-top: -5vw;
+}
+
+.search-bar .form-control{
+    padding: 30px 10px;
+}
+
+.search-bar .text-btn-search{
+    display: none;
+}
+
+.search-bar img{
+    padding: 10px 20px;
+}
+
+.search-bar .btn{
+    box-sizing: content-box;
+}
+
+.footer-section{
+    margin-top: 100px;
+    background: #444;
+    color: white;
+    padding: 50px 30px;
+}
+
+.footer-section ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section ul li{
+    margin-bottom: 10px;
+}
+
+.footer-section a{
+    color: white;
+}
+
+.footer-section .logo-footer{
+    width: 40%;
+    float: left;
+    border: 1px solid #fff;
+    padding: 30px 20px;
+    border-radius: 100%;
+}
+
+.footer-section span{
+    float: left;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.copyright .kontak{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 @media only screen and (min-width: 768px){
     p{
@@ -147,6 +227,10 @@ p{
 
     .text-header{
         font-size: 2.3em;
+    }
+
+    .sub-text-header{
+        font-size: 2em;
     }
 
     .btn-filled{
@@ -166,7 +250,41 @@ p{
     .sub-text-banner{
         text-align: center;
     }
+
+    .search-bar{
+        margin-top: -3vw;
+    }   
+    .search-bar img{
+        padding: 0px;
+    }
+    .search-bar .text-btn-search{
+        display: inherit;
+    }
+
+    .footer-section{
+        padding: 50px 100px;
+    }
     
+    .footer-section .logo-footer, .footer-section span{
+        float: right;
+        text-align: right;
+    }
+
+    .copyright{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .copyright .kontak{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .copyright .kontak div{
+        margin-left: 30px;
+    }
 }
 
 @media only screen and (min-width: 1290px){

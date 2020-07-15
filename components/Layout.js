@@ -6,6 +6,7 @@ import ReactGa from 'react-ga';
 
 import '../styles/Style.css'
 import { useEffect } from "react";
+import Footer from "./Footer";
 
 const Layout = (props) =>{
     useEffect(()=>{
@@ -22,9 +23,10 @@ const Layout = (props) =>{
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="description" content="Lagi nyari Bootcamp? NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh NooBeeID."/>
                 <meta name="google-site-verification" content="ZhBcRCIPCzRGpLMsL6-weqa-MEXXkuwWORY8_meDCCw" />
+                <meta name="keyword" content="NooBeeID, noobee.id, noobeecamp, camp.noobee.id, Bootcamp pekanbaru, Bootcamp IT Pekanbaru, Bootcamp IT"/>
                 <title>NooBeeCamp</title>
                 {/* link fontawesome */}
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossOrigin="anonymous"></link>
+                {/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossOrigin="anonymous"></link> */}
     
                 {/* link fonts */}
                 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
@@ -52,7 +54,7 @@ const Layout = (props) =>{
             <Navbar activeClass={props.activeClass}/>
             {props.children}
     
-            
+            <Footer/>
         </div>
     )
 }
