@@ -71,8 +71,8 @@ const Card = (props) => {
             </div>
             <div className="card-body">    
                 <h4 className="text-card mt-2"><b>{title}</b></h4>
-                {subHeader  ? <h6>{ promo 
-                                ? <div> <span>{convertCurrencies(promo)}</span> {convertCurrencies(subHeader)}</div> 
+                {subHeader  ? <h6 className="text-sub-header">{ promo 
+                                ? <div> <span className="promo">{convertCurrencies(promo)}</span> {convertCurrencies(subHeader)}</div> 
                                 : convertCurrencies(subHeader)}</h6> 
                             : ""}
                 <p className="mt-3 mb-3">

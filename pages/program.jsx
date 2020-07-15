@@ -40,6 +40,40 @@ const _not_found=()=>{
     )
 }
 
+const _search_bar=(props)=>{
+    return(
+        <div className="search-bar-section">
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-xl-12 col-md-10">
+                        <div className="search-bar">
+                            <form onSubmit={(e)=>props.onSubmit(e)}>
+                                <div className="input-group">
+                                    <input 
+                                        autoFocus={true}
+                                        value={props.search}
+                                        type="text" 
+                                        onChange={(e)=>props.onChange(e)}
+                                        className="form-control" 
+                                        placeholder="Materi apa yang sedang kamu cari?" 
+                                        aria-label="Materi apa yang sedang kamu cari?" 
+                                        aria-describedby="basic-addon2" />
+                                    <div className="input-group-append">
+                                        <button 
+                                        type="submit"
+                                        className="btn input-group-text bg-filled" 
+                                        id="basic-addon2"><i className="fas fa-search"></i> &nbsp; Cari materi</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 const _content=(props)=>{
     
     return(
@@ -93,6 +127,30 @@ const Program = (props) => {
     ]);
     const [notFound, setNotFound] = useState(false);
     const [listData, setListData] = useState([]);
+    const [masterData, setMasterData] = useState([]);
+
+    const [search, setSearch] = useState("");
+
+    const handleChange= (e)=>{
+        setSearch(e.target.value)
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        const list = masterData;
+        const s = new RegExp(search, "gi");
+        const newList = list[0].listClass.filter((l)=>{
+            return l.nameClass.search(s) !== -1
+        });
+        
+        console.log(newList, masterData);
+        setListData([
+            {
+                name: masterData[0].name,
+                listClass : newList
+            }
+        ])
+    }
 
     const get_data=(kelas)=>{
         return new Promise((resolve, reject)=>{
@@ -116,7 +174,7 @@ const Program = (props) => {
                             img : "codeigniter.webp",
                             footer : "Mempunyai basic programming",
                             link : "/program?kelas=IT",
-                            promo: "450000"
+                            promo: "550000"
                         },
                         {
                             nameClass : "Fullstack Designer",
@@ -134,7 +192,7 @@ const Program = (props) => {
                             img : "mern.webp",
                             footer : "Mempunyai basic programming",
                             link : "/program?kelas=IT",
-                            promo: "450000"
+                            promo: "700000"
                         },
                         {
                             nameClass : "Golang Stack",
@@ -143,7 +201,7 @@ const Program = (props) => {
                             img : "golang.webp",
                             footer : "Mempunyai basic programming",
                             link : "/program?kelas=IT",
-                            promo: "450000"
+                            promo: "700000"
                         }
                     ]
                 }
@@ -162,6 +220,7 @@ const Program = (props) => {
 
             const newList = await get_data(props.url.query.kelas);
             await setListData(newList);
+            await setMasterData(newList);
 
             const flag = await list.find(l=>{return toLowerCase(props.url.query.kelas) == toLowerCase(l)})
             if(!flag){
@@ -199,6 +258,11 @@ const Program = (props) => {
                 :   <div className="wrapper">
                         <_banner
                             kelas={className}
+                        />
+                        <_search_bar 
+                            onSubmit = {handleSubmit}
+                            search = {search}
+                            onChange = {handleChange}
                         />
                         {listData.length > 0
                             ? <_content list={listData} />
