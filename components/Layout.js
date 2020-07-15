@@ -1,18 +1,18 @@
 import Navbar from "./Navbar";
 import Head from 'next/head';
-import ReactGa from 'react-ga';
 import Router from 'next/router';
 import withGa from 'next-ga';
-import {useEffect} from 'react'
+import ReactGa from 'react-ga';
 
 import '../styles/Style.css'
+import { useEffect } from "react";
 
 const Layout = (props) =>{
-    useEffect(() => {
-        ReactGa.initialize('UA-172743409-2');
+    useEffect(()=>{
+        ReactGa.initialize("UA-172743409-2");
 
         ReactGa.pageview(window.location.pathname+window.location.search);
-    }, [])
+    },[])
     return (
         <div>
             <Head>
@@ -36,7 +36,18 @@ const Layout = (props) =>{
                 {/* theme */}
     
                 {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172743409-2"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+                                window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', 'UA-172743409-2');`,
+                    }}
+                />
+
             </Head>
             <Navbar activeClass={props.activeClass}/>
             {props.children}
@@ -46,4 +57,4 @@ const Layout = (props) =>{
     )
 }
 
-export default withGa("UA-172743409-2",Router)(Layout);
+export default Layout;
