@@ -1,0 +1,15 @@
+.program-kelas-section{
+    margin: 50px 20px;
+}
+
+@media only screen and (min-width:768px){
+    .program-kelas-section{
+        margin: 50px;
+    }
+}
+
+@media only screen and (min-width:1290px){
+    .program-kelas-section{
+        margin: 50px 100px;
+    }
+}

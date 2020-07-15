@@ -48,12 +48,12 @@ const Navbar=({activeClass})=>{
             const scroll = parseInt(window.scrollY);
             if(scroll > 200 ){
                 setNavbar("navbar navbar-expand-lg navbar-light bg-light main-navbar fixed-top scrolled")
-                console.log(scroll)
+                // console.log(scroll)
             } else {
                 setNavbar("navbar navbar-expand-lg navbar-light bg-light main-navbar fixed-top")
             }
 
-            console.log(window.innerWidth)
+            // console.log(window.innerWidth)
         }
 
 

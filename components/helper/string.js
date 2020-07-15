@@ -7,3 +7,8 @@ exports.toLowerCase=(string)=>{
     const s = String(string);
     return s.toLowerCase();
 }
+
+exports.convertCurrencies=(string)=>{
+    const s = String(string);
+    return "Rp. "+new Intl.NumberFormat().format(parseInt(s));
+}

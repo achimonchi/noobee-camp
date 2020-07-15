@@ -121,6 +121,7 @@ const _program=(props)=>{
                                         desc={p.desc}
                                         link={p.link}
                                         img={p.img}
+                                        textButton="Intip sebentar yuk !"
                                     />
                                 </div>
                             ))}

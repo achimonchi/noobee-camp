@@ -37,10 +37,10 @@ const _search_bar=()=>{
                 <div className="row justify-content-center">
                     <div className="col-xl-12 col-md-10">
                         <div className="search-bar">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari Nama Peserta Bootcamp" aria-label="Cari Nama Peserta Bootcamp" aria-describedby="basic-addon2" />
-                                <div class="input-group-append">
-                                    <span class="input-group-text bg-filled" id="basic-addon2"><i className="fas fa-search"></i> &nbsp; Cari</span>
+                            <div className="input-group">
+                                <input type="text" className="form-control" placeholder="Cari Nama Peserta Bootcamp" aria-label="Cari Nama Peserta Bootcamp" aria-describedby="basic-addon2" />
+                                <div className="input-group-append">
+                                    <span className="input-group-text bg-filled" id="basic-addon2"><i className="fas fa-search"></i> &nbsp; Cari</span>
                                 </div>
                             </div>
                         </div>
