@@ -30,6 +30,17 @@ const Layout = (props) =>(
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', 'UA-172743409-1');                    
+                    `,
+                }}
+                ></script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
                         <!-- Google Analytics -->
                         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
