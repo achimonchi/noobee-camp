@@ -62,7 +62,7 @@ const Navbar=({activeClass})=>{
 
     return(
         <nav className={navbar}>
-            <Link href="/"><a className="navbar-brand"><img className="logo" src="/images/logo.svg"/> NooBee<b>Camp</b></a></Link>
+            <Link href="/"><a className="navbar-brand"><img alt="logo" className="logo" src="/images/logo.svg"/> NooBee<b>Camp</b></a></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

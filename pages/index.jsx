@@ -35,19 +35,19 @@ const _miniBanner=()=>{
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="mini-icon">
-                                    <img className="icon-mini-banner" src="/images/user.svg" alt="user"/>
+                                    <img alt="user" className="icon-mini-banner" src="/images/user.svg" alt="user"/>
                                     <h3 className="text-mini-banner mt-4"><b>0</b> Peserta</h3>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="mini-icon">
-                                    <img className="icon-mini-banner" src="/images/bag.svg" alt=""/>
+                                    <img alt="portfolio" className="icon-mini-banner" src="/images/bag.svg" alt=""/>
                                     <h3 className="text-mini-banner mt-4"><b>0</b> Portfolio</h3>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="mini-icon">
-                                    <img className="icon-mini-banner" src="/images/cupboard.svg" alt=""/>
+                                    <img alt="class" className="icon-mini-banner" src="/images/cupboard.svg" alt=""/>
                                     <h3 className="text-mini-banner mt-4"><b>5</b> Kelas</h3>
                                 </div>
                             </div>
@@ -68,13 +68,13 @@ const _about=()=>{
                         <div className="about">
                             <div className="row">
                                 <div className="col-md-5">
-                                    <img src="/images/bg-about.png" alt="about" className="img-about"/>
+                                    <img  alt="about" src="/images/bg-about.png" alt="about" className="img-about"/>
                                 </div>
                                 <div className="col-md-5 offset-md-2">
                                     <div className="text-about">
                                         <h2 className="text-header">Apa sih, NooBee<b>Camp</b> itu ?</h2>
                                         <p className="mt-3">
-                                            NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh <b><i><a href="http://noobee.id/" target="_blank">NooBeeID</a></i></b>.
+                                            NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh <b><i><a rel="noopener" href="http://noobee.id/" target="_blank">NooBeeID</a></i></b>.
                                             Dengan kurikulum yang selalu <b>up-to-date</b>, sehingga masyarakat mampu untuk bersaing di dunia kerja.
                                         </p>
                                         <Link href="/registrasi"><a className="btn btn-filled btn-full btn-about">Daftar sekarang</a></Link>
@@ -113,10 +113,10 @@ const _program=(props)=>{
                         <h2 className="text-header text-center">Program yang ada di NooBeeCamp</h2>
                         <div className="row">
                             {props.program.map((p,i)=>(
-                                <div className="col-md-4">
+                                <div className="col-md-4" 
+                                key={i} >
                                     <Card
                                         className="card mt-4"
-                                        key={i} 
                                         title={p.title}
                                         desc={p.desc}
                                         link={p.link}

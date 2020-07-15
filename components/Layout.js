@@ -7,7 +7,10 @@ const Layout = (props) =>(
     <div>
         <Head>
             <link rel="icon" href="/images/icon.ico" type="image/ico" sizes="128x128"/> 
+            {/* meta tag */}
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="description" content="Lagi nyari Bootcamp? NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh NooBeeID."/>
             <title>NooBeeCamp</title>
             {/* link fontawesome */}
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossOrigin="anonymous"></link>
