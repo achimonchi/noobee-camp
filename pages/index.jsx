@@ -43,8 +43,8 @@ const _banner = () =>{
 const _miniBanner=()=>{
     return(
         <div className="container">
-            <div className="row">
-                <div className="col-md">
+            <div className="row justify-content-center">
+                <div className="col-md-10">
                     <div className="mini-banner">
                         <div className="row">
                             <div className="col-md-4">
@@ -76,15 +76,22 @@ const _miniBanner=()=>{
 const _about=()=>{
     return(
         <div className="about-section">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-md">
                         <div className="about">
                             <div className="row">
-                                <div className="col-md-5">
-                                    <img  alt="about" src="/images/bg-about.webp" alt="about" className="img-about"/>
+                                <div className="col-md-6">
+                                    <motion.img  
+                                        initial={{opacity:0, x:-100}}
+                                        animate={{opacity:1, x:0}}
+                                        transition={{
+                                            duration:.3,
+                                            delay:.7
+                                        }}
+                                    alt="about" src="/images/bg-about.webp" alt="about" className="img-about"/>
                                 </div>
-                                <div className="col-md-5 offset-md-2">
+                                <div className="col-md-6">
                                     <div className="text-about">
                                         <h2 className="text-header">Apa sih, NooBee<b>Camp</b> itu ?</h2>
                                         <p className="mt-3">
@@ -121,7 +128,7 @@ const _program=(props)=>{
 
     return(
         <div className="program-section">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-md">
                         <h2 className="text-header text-center">Program yang ada di NooBeeCamp</h2>

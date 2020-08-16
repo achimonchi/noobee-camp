@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Layout from '../components/Layout'
 import Link from 'next/link';
+import {motion} from 'framer-motion'
 
 import {capitalize, toLowerCase} from './../components/helper/string'
 import Card from '../components/Card';
@@ -45,7 +46,7 @@ const _search_bar=(props)=>{
         <div className="search-bar-section">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-xl-12 col-md-10">
+                    <div className="col-md-10">
                         <div className="search-bar">
                             <form onSubmit={(e)=>props.onSubmit(e)}>
                                 <div className="input-group">
@@ -78,11 +79,25 @@ const _content=(props)=>{
     
     return(
         <div className="program-kelas-section">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-md">
                         <div className="program-kelas">
-                            <div className="row">
+                            <motion.div
+                                initial={{
+                                    opacity:0,
+                                    x:-10
+                                }}
+                                animate={{
+                                    opacity:1,
+                                    x:0
+                                }}
+                                transition={{
+                                    delay:.3,
+                                    duration:.3,
+                                    staggerChildren:0.3
+                                }}
+                            className="row">
                                 {props.list[0].listClass.map((l,i)=>(
                                     <div key={i} className="col-md-4">
                                         <Card 
@@ -90,7 +105,7 @@ const _content=(props)=>{
                                             title={l.nameClass}
                                             desc={l.desc}
                                             subHeader={l.price}
-                                            link={l.link}
+                                            link={"/program/kelas?id="+l.id}
                                             img={l.img}
                                             promo={l.promo}
                                             footer={l.footer}
@@ -98,7 +113,7 @@ const _content=(props)=>{
                                         />
                                     </div>
                                 ))}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -108,7 +123,7 @@ const _content=(props)=>{
 }
 
 const Program = (props) => {
-    const [className, setClassName] = useState(props.url.query.kelas);
+    const [className, setClassName] = useState("");
 
     const [listClass, setListClass] = useState([
         {
@@ -120,7 +135,6 @@ const Program = (props) => {
                     desc : "",
                     img : "placeholder.webp",
                     footer : "",
-                    link : "#"
                 }
             ]
         }
@@ -153,61 +167,12 @@ const Program = (props) => {
     }
 
     const get_data=(kelas)=>{
-        return new Promise((resolve, reject)=>{
-            const data = [
-                {
-                    name : "IT",
-                    listClass : [
-                        {
-                            nameClass : "Fundamental Programming",
-                            price : "350000",
-                            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus.",
-                            img : "programming.webp",
-                            footer : "Cocok untuk pemula",
-                            link : "/program?kelas=IT",
-                            promo: "450000"
-                        },
-                        {
-                            nameClass : "Fullstack Developer",
-                            price : "450000",
-                            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus.",
-                            img : "codeigniter.webp",
-                            footer : "Mempunyai basic programming",
-                            link : "/program?kelas=IT",
-                            promo: "550000"
-                        },
-                        {
-                            nameClass : "Fullstack Designer",
-                            price : "300000",
-                            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus.",
-                            img : "fullstack-designer.webp",
-                            footer : "Cocok untuk pemula",
-                            link : "/program?kelas=IT",
-                            promo: "450000"
-                        },
-                        {
-                            nameClass : "MERN Stack",
-                            price : "550000",
-                            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus.",
-                            img : "mern.webp",
-                            footer : "Mempunyai basic programming",
-                            link : "/program?kelas=IT",
-                            promo: "700000"
-                        },
-                        {
-                            nameClass : "Golang Stack",
-                            price : "550000",
-                            desc : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium senectus purus.",
-                            img : "golang.webp",
-                            footer : "Mempunyai basic programming",
-                            link : "/program?kelas=IT",
-                            promo: "700000"
-                        }
-                    ]
-                }
-            ];
-
-            const list = data.filter((d=>{return toLowerCase(d.name) == toLowerCase(kelas)}));
+        return new Promise(async(resolve, reject)=>{
+            const uri = "https://my-json-server.typicode.com/achimonchi/mockUp/kelas";
+            const res = await fetch(uri) ;
+            const data = await res.json() ;
+            const dataKelas = data;
+            const list = dataKelas.filter((d=>{return toLowerCase(d.name) == toLowerCase(kelas)}));
             resolve(list);
         })
     }
@@ -215,7 +180,7 @@ const Program = (props) => {
     useEffect(()=>{
         async function setData(){
             const list = ["it", "design", "others"]
-            setClassName(props.url.query.kelas)
+            setClassName(props.url.query.kelas || window.location.search.split("=")[1])
             setListClass(list);
 
             const newList = await get_data(props.url.query.kelas);
@@ -248,7 +213,6 @@ const Program = (props) => {
                                 <h6>
                                     {listClass.map((l,i)=>(
                                         <Link key={i} href={"/program?kelas="+l}><a className="mr-3" >{l}</a></Link>
-                                        
                                     ))}
                                 </h6>
                             </div>            

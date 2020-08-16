@@ -1,12 +1,12 @@
 import Navbar from "./Navbar";
 import Head from 'next/head';
-import Router from 'next/router';
-import withGa from 'next-ga';
 import ReactGa from 'react-ga';
 
 import '../styles/Style.css'
 import { useEffect } from "react";
 import Footer from "./Footer";
+
+import {AnimatePresence} from 'framer-motion';
 
 const Layout = (props) =>{
     useEffect(()=>{
@@ -15,7 +15,8 @@ const Layout = (props) =>{
         ReactGa.pageview(window.location.pathname+window.location.search);
     },[])
     return (
-        <div>
+        <AnimatePresence>
+            <div>
             <Head>
                 <link rel="icon" href="/images/icon.ico" type="image/ico" sizes="128x128"/> 
                 {/* meta tag */}
@@ -56,6 +57,7 @@ const Layout = (props) =>{
     
             <Footer/>
         </div>
+        </AnimatePresence>
     )
 }
 

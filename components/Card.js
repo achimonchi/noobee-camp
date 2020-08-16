@@ -76,7 +76,7 @@ const Card = (props) => {
                                 : convertCurrencies(subHeader)}</h6> 
                             : ""}
                 <p className="mt-3 mb-3">
-                    {desc}
+                    {desc.length > 100 ? desc.slice(0,100) + "..." : desc}
                 </p>
                 <Link href={link}>
                     <a className="btn btn-block btn-filled mt-3 mb-2">

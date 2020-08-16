@@ -48,7 +48,7 @@ const _search_bar=()=>{
         <div className="search-bar-section">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-xl-12 col-md-10">
+                    <div className="col-md-10">
                         <div className="search-bar">
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder="Cari Nama Peserta Bootcamp" aria-label="Cari Nama Peserta Bootcamp" aria-describedby="basic-addon2" />
