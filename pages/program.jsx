@@ -210,17 +210,12 @@ const Program = (props) => {
         e.preventDefault();
         const list = masterData;
         const s = new RegExp(search, "gi");
-        const newList = list[0].listClass.filter((l)=>{
+        const newList = list.filter((l)=>{
             return l.nameClass.search(s) !== -1
         });
         
         console.log(newList, masterData);
-        setListData([
-            {
-                name: masterData[0].name,
-                listClass : newList
-            }
-        ])
+        setListData(newList)
     }
 
     const get_data=(kelas)=>{
