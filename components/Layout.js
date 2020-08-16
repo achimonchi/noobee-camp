@@ -20,7 +20,7 @@ const Layout = (props) =>{
                 <link rel="icon" href="/images/icon.ico" type="image/ico" sizes="128x128"/> 
                 {/* meta tag */}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="description" content="Lagi nyari Bootcamp? NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh NooBeeID."/>
                 <meta name="google-site-verification" content="ZhBcRCIPCzRGpLMsL6-weqa-MEXXkuwWORY8_meDCCw" />
                 <meta name="keyword" content="NooBeeID, noobee.id, noobeecamp, camp.noobee.id, Bootcamp pekanbaru, Bootcamp IT Pekanbaru, Bootcamp IT"/>

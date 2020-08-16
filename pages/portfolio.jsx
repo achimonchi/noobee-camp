@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
 import '../styles/portfolio.css';
-import Card from '../components/Card';
+import { motion } from 'framer-motion';
 
 const _banner = () =>{
     const date = new Date();
-    const day = date.getDay();
+    const day = date.getDate();
     const listMonth=[
         "January", "February", "March", "April", "May",
         "June", "July", "August", "September", "October",
@@ -18,10 +18,23 @@ const _banner = () =>{
                 <div className="container-fluid">
                     <div className="row justify-content-center">
                         <div className="col-md-7 text-center">
-                            <div className="banner-wrapper">
+                            <motion.div initial="hidden" animate="visible" variants={{
+                                hidden:{
+                                    scale:.5,
+                                    opacity:0
+                                },
+                                visible:{
+                                    scale:1,
+                                    opacity:1,
+                                    transition:{
+                                        delay:.4,
+                                        delayChildren:1
+                                    }
+                                }
+                            }}  className="banner-wrapper">
                                 <h1 className="mt-5 text-banner"><b>Kumpulan Portfolio Yang Telah Dibuat Oleh Peserta NooBee<span>Camp</span></b></h1>
-                                    <h4 className="sub-text-banner mt-4"><i>*Updated <b>{`${day}-${month}-${year}`}</b></i></h4>
-                            </div>
+                                <h4 className="sub-text-banner mt-4"><i>*Updated <b>{`${day}-${month}-${year}`}</b></i></h4>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

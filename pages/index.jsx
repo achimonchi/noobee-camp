@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { motion } from 'framer-motion';
 
 import '../styles/index.css';
 import Link from 'next/link';
@@ -14,10 +15,23 @@ const _banner = () =>{
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md text-center">
-                            <div className="banner-wrapper">
+                            <motion.div initial="hidden" animate="visible" variants={{
+                                hidden:{
+                                    scale:.5,
+                                    opacity:0
+                                },
+                                visible:{
+                                    scale:1,
+                                    opacity:1,
+                                    transition:{
+                                        delay:.4,
+                                        delayChildren:1
+                                    }
+                                }
+                            }} className="banner-wrapper">
                                 <h1 className="mt-5 text-banner"><b>Bootcamp? Yuk langsung ke <br/>NooBee<span>Camp</span> aja</b></h1>
                                 <h4 className="sub-text-banner mt-4">"Siapapun bisa menjadi hebat"</h4>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
