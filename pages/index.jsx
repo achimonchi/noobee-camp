@@ -15,20 +15,24 @@ const _banner = () =>{
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md text-center">
-                            <motion.div initial="hidden" animate="visible" variants={{
-                                hidden:{
-                                    scale:.5,
-                                    opacity:0
-                                },
-                                visible:{
-                                    scale:1,
-                                    opacity:1,
-                                    transition:{
-                                        delay:.4,
-                                        delayChildren:1
+                            <motion.div 
+                                initial="hidden" 
+                                animate="visible" 
+                                variants={{
+                                    hidden:{
+                                        scale:.5,
+                                        opacity:0
+                                    },
+                                    visible:{
+                                        scale:1,
+                                        opacity:1,
+                                        transition:{
+                                            delay:.4,
+                                            delayChildren:1
+                                        }
                                     }
-                                }
-                            }} className="banner-wrapper">
+                                }} 
+                                className="banner-wrapper">
                                 <h1 className="mt-5 text-banner"><b>Bootcamp? Yuk langsung ke <br/>NooBee<span>Camp</span> aja</b></h1>
                                 <h4 className="sub-text-banner mt-4">"Siapapun bisa menjadi hebat"</h4>
                             </motion.div>
@@ -45,28 +49,81 @@ const _miniBanner=()=>{
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-10">
-                    <div className="mini-banner">
-                        <div className="row">
+                    <motion.div
+                    initial={{
+                        opacity:0,
+                        y:100
+                    }}
+                    animate={{
+                        opacity:1,
+                        y:0,
+                    }}
+                    transition={{
+                        delay:.7,
+                        duration:.3
+                    }}
+                    className="mini-banner">
+                        <motion.div 
+                        className="row">
                             <div className="col-md-4">
-                                <div className="mini-icon">
+                                <motion.div 
+                                initial={{
+                                    opacity:0,
+                                    x:-100
+                                }}
+                                animate={{
+                                    opacity:1,
+                                    x:0
+                                }}
+                                transition={{
+                                    delay:1,
+                                    duration:.4,
+                                }}
+                                className="mini-icon">
                                     <img alt="user" className="icon-mini-banner" src="/images/user.svg" alt="user"/>
                                     <h3 className="text-mini-banner mt-4"><b>0</b> Peserta</h3>
-                                </div>
+                                </motion.div>
                             </div>
                             <div className="col-md-4">
-                                <div className="mini-icon">
+                                <motion.div 
+                                initial={{
+                                    opacity:0,
+                                    x:-100
+                                }}
+                                animate={{
+                                    opacity:1,
+                                    x:0
+                                }}
+                                transition={{
+                                    delay:1.2,
+                                    duration:.4,
+                                }}
+                                className="mini-icon">
                                     <img alt="portfolio" className="icon-mini-banner" src="/images/bag.svg" alt=""/>
                                     <h3 className="text-mini-banner mt-4"><b>0</b> Portfolio</h3>
-                                </div>
+                                </motion.div>
                             </div>
                             <div className="col-md-4">
-                                <div className="mini-icon">
+                                <motion.div 
+                                initial={{
+                                    opacity:0,
+                                    x:-100
+                                }}
+                                animate={{
+                                    opacity:1,
+                                    x:0
+                                }}
+                                transition={{
+                                    delay:1.4,
+                                    duration:.4,
+                                }}
+                                className="mini-icon">
                                     <img alt="class" className="icon-mini-banner" src="/images/cupboard.svg" alt=""/>
                                     <h3 className="text-mini-banner mt-4"><b>5</b> Kelas</h3>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
         </div>
@@ -182,7 +239,7 @@ const Index = (props) =>{
     ])
     return(
         <Layout activeClass={props.url.pathname}>
-            <div className="wrapper">
+            <motion.div exit={{opacity:0}} className="wrapper">
                 <_banner/>
                 <_miniBanner/>
                 <_about/>
@@ -190,7 +247,7 @@ const Index = (props) =>{
                 <_program
                     program={program}
                 />
-            </div>
+            </motion.div>
         </Layout>
     )
 }

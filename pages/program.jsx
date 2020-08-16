@@ -8,28 +8,61 @@ import Card from '../components/Card';
 
 import "../styles/program.css"
 
+
+const easing = [.6, -0.05, 0.01, 0.99];
+
 const _banner = ({kelas}) =>{
     return (
-        <div className="banner">
+        <motion.div exit={{opacity:0}} initial="initial" animate="animate"  className="banner">
             <div className="bg-banner">
                 <div className="container-fluid">
                     <div className="row justify-content-center">
-                        <div className="col-md-7 text-center">
-                            <div className="banner-wrapper">
-                                    <h1 className="mt-5 text-banner"><b>Kelas <span>{capitalize(kelas)}</span></b></h1>
-                                    <h4 className="sub-text-banner mt-4"><i>Program <b>Batch #1</b><br/>Periode <b>Oktober - Desember</b></i></h4>
-                            </div>
-                        </div>
+                        <motion.div variants={{
+                            animate : {
+                                staggerChildren : 0.5
+                            }
+                        }} className="col-md-7 text-center">
+                            <motion.div 
+                                initial={{
+                                    scale : .5,
+                                    opacity: 0
+                                }}
+                                animate = {{
+                                    scale : 1,
+                                    opacity:1,
+                                    transition : {
+                                        duration : .6,
+                                        delay : .5,
+                                        ease : easing,
+                                    }
+                                }}
+                                
+                            className="banner-wrapper">
+                                <h1 className="mt-5 text-banner"><b>Kelas <span>{capitalize(kelas)}</span></b></h1>
+                                <h4 className="sub-text-banner mt-4"><i>Program <b>Batch #1</b><br/>Periode <b>Oktober - Desember</b></i></h4>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 const _not_found=()=>{
     return(
-        <div className="container">
+        <motion.div 
+        initial={{
+            opacity:0,
+        }}
+        animate={{
+            opacity:1,
+        }}
+        transition={{
+            delay:1.3,
+            duration:.4
+        }}
+        className="container">
             <div className="row">
                 <div className="col-md">
                     <h2 className="text-center text-header mt-4">
@@ -37,13 +70,26 @@ const _not_found=()=>{
                     </h2>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 const _search_bar=(props)=>{
     return(
-        <div className="search-bar-section">
+        <motion.div 
+        initial={{
+            opacity:0,
+            y:-60
+        }}
+        animate={{
+            opacity:1,
+            y:0
+        }}
+        transition={{
+            delay:1,
+            duration:.5
+        }}
+        className="search-bar-section">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-10">
@@ -71,35 +117,46 @@ const _search_bar=(props)=>{
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 const _content=(props)=>{
     
     return(
-        <div className="program-kelas-section">
+        <motion.div 
+        initial={{
+            opacity:0,
+        }}
+        animate={{
+            opacity:1,
+        }}
+        transition={{
+            delay:1,
+            duration:.4
+        }}
+        className="program-kelas-section">
             <div className="container">
                 <div className="row">
                     <div className="col-md">
                         <div className="program-kelas">
-                            <motion.div
-                                initial={{
-                                    opacity:0,
-                                    x:-10
-                                }}
-                                animate={{
-                                    opacity:1,
-                                    x:0
-                                }}
-                                transition={{
-                                    delay:.3,
-                                    duration:.3,
-                                    staggerChildren:0.3
-                                }}
+                            <div
                             className="row">
-                                {props.list[0].listClass.map((l,i)=>(
-                                    <div key={i} className="col-md-4">
+                                {props.list.map((l,i)=>(
+                                    <motion.div 
+                                    initial={{
+                                        opacity:0,
+                                        x:-100
+                                    }}
+                                    animate={{
+                                        opacity:1,
+                                        x:0
+                                    }}
+                                    transition={{
+                                        delay:.7+(i/5),
+                                        duration:.4,
+                                    }}
+                                    key={i} className="col-md-4">
                                         <Card 
                                             className="card mt-4"
                                             title={l.nameClass}
@@ -111,14 +168,14 @@ const _content=(props)=>{
                                             footer={l.footer}
                                             textButton="Lihat detail materi"
                                         />
-                                    </div>
+                                    </motion.div>
                                 ))}
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
@@ -142,7 +199,7 @@ const Program = (props) => {
     const [notFound, setNotFound] = useState(false);
     const [listData, setListData] = useState([]);
     const [masterData, setMasterData] = useState([]);
-
+    const [isLoading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
 
     const handleChange= (e)=>{
@@ -168,12 +225,15 @@ const Program = (props) => {
 
     const get_data=(kelas)=>{
         return new Promise(async(resolve, reject)=>{
-            const uri = "https://my-json-server.typicode.com/achimonchi/mockUp/kelas";
+            const uri = "https://my-json-server.typicode.com/achimonchi/mockUp/"+kelas;
             const res = await fetch(uri) ;
             const data = await res.json() ;
-            const dataKelas = data;
-            const list = dataKelas.filter((d=>{return toLowerCase(d.name) == toLowerCase(kelas)}));
-            resolve(list);
+            
+            if(data.length > 0){
+                resolve(data);
+            } else {
+                resolve(data)
+            }
         })
     }
 
@@ -183,16 +243,20 @@ const Program = (props) => {
             setClassName(props.url.query.kelas || window.location.search.split("=")[1])
             setListClass(list);
 
-            const newList = await get_data(props.url.query.kelas);
-            await setListData(newList);
-            await setMasterData(newList);
+            const newList = await get_data(props.url.query.kelas || window.location.search.split("=")[1]);
+            // console.log(newList)
+            setListData(newList);
+            setMasterData(newList);
 
-            const flag = await list.find(l=>{return toLowerCase(props.url.query.kelas) == toLowerCase(l)})
+            const flag = list.find(l=>{return toLowerCase(props.url.query.kelas) == toLowerCase(l)})
             if(!flag){
                 setNotFound(true);
             } else {
                 setNotFound(false)
             }
+
+            setLoading(false);
+
         }
         
         setData()
@@ -219,7 +283,7 @@ const Program = (props) => {
                             </div>
                         </div>
                     </div>
-                :   <div className="wrapper">
+                :   <motion.div exit={{opacity:0}} initial="initial" animate="animate" className="wrapper">
                         <_banner
                             kelas={className}
                         />
@@ -228,11 +292,22 @@ const Program = (props) => {
                             search = {search}
                             onChange = {handleChange}
                         />
-                        {listData.length > 0
+                        {listData.length > 0 
                             ? <_content list={listData} />
-                            : <_not_found/>
+                            : !isLoading
+                                ?  <_not_found/>
+                                : <motion.div 
+                                className="container">
+                                    <div className="row">
+                                        <div className="col-md">
+                                            <h2 className="text-center text-header mt-4">
+                                                Loading ...
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </motion.div>
                         }
-                    </div>}
+                    </motion.div>}
         </Layout>
     )
 }

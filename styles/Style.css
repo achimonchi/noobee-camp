@@ -120,6 +120,13 @@ p{
     font-weight: normal;
 }
 
+.promo{
+    text-decoration: line-through;
+    color: #444;
+    opacity: .3;
+    font-weight: normal;
+}
+
 .card .text-sub-header{
     color: salmon;
     font-weight: bold;

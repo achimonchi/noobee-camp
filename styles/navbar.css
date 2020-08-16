@@ -46,6 +46,10 @@ nav.main-navbar{
     padding:10px 30px;
 }
 
+.nav-link{
+    font-size: 1rem;
+}
+
 .btn-register{
     background: #FFDA40;
     text-align: center;
@@ -55,7 +59,7 @@ nav.main-navbar{
 
 .navbar-light .navbar-nav .btn-register {
     color: #444 !important;
-    padding:16px 32px ;
+    padding:10px 20px ;
 }
 
 .navbar-brand b{
@@ -83,11 +87,11 @@ nav.main-navbar{
     }
 
     .navbar-brand .logo{
-        width: 80px;
+        width: 48px;
     }
 
     .main-navbar .navbar-brand{
-        font-size: 1.8em;
+        font-size: 1.4rem;
     }
 
     .main-navbar .nav-item{
@@ -95,7 +99,7 @@ nav.main-navbar{
     }
 
     .main-navbar .nav-item{
-        padding: 20px 30px;
+        padding: 10px 20px;
     }
 
     .dropdown-menu{

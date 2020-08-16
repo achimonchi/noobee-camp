@@ -45,7 +45,20 @@ const _banner = () =>{
 
 const _search_bar=()=>{
     return(
-        <div className="search-bar-section">
+        <motion.div 
+        initial={{
+            opacity:0,
+            y:-60
+        }}
+        animate={{
+            opacity:1,
+            y:0
+        }}
+        transition={{
+            delay:.7,
+            duration:.5
+        }}
+        className="search-bar-section">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-10">
@@ -63,13 +76,24 @@ const _search_bar=()=>{
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 const _content=(props)=>{
     return(
-        <div className="content-portfolio-section">
+        <motion.div 
+        initial={{
+            opacity:0,
+        }}
+        animate={{
+            opacity:1,
+        }}
+        transition={{
+            delay:1,
+            duration:.4
+        }}
+        className="content-portfolio-section">
             <div className="container">
                 <div className="row">
                     <div className="col-md">
@@ -79,7 +103,7 @@ const _content=(props)=>{
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

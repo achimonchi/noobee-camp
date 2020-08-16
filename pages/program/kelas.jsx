@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import React, { useState, useEffect } from 'react';
-import {capitalize, toLowerCase} from '../../components/helper/string'
+import {capitalize, toLowerCase, convertCurrencies} from '../../components/helper/string'
 
 import {motion} from 'framer-motion';
 
@@ -58,7 +58,7 @@ const _bannerImage=({img}) =>{
                         <motion.img
                             initial={{opacity:0, y:100}} 
                             animate={{opacity:1.2, y:0}}
-                            transition={{delay:1}}
+                            transition={{delay:2}}
                             style={{width:"100%", borderRadius:"10px", maxHeight:"30em", objectFit:"cover"}}
                         src={"../images/kelas/"+img} alt={img}/>
                     </div>
@@ -68,11 +68,11 @@ const _bannerImage=({img}) =>{
     )
 }
 
-const _minibanner = ({desc, mainTopics, footer}) =>{
+const _minibanner = ({desc, mainTopics, footer, promo, price}) =>{
     return(
         <div className="container mt-5">
             <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-8 mb-5">
                     <motion.div 
                         initial={{opacity:0, y:100}}
                         animate={{opacity:1, y:0, delay:0}}
@@ -83,7 +83,7 @@ const _minibanner = ({desc, mainTopics, footer}) =>{
                         <p>{desc}</p>
                     </motion.div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 mb-5">
                     <div 
                     style={{background:"white", height:"100%"}}
                     className="content p-5 pb-0">
@@ -95,7 +95,21 @@ const _minibanner = ({desc, mainTopics, footer}) =>{
                             ))}
                             <hr/>
                         <div>
-                            Syarat : {footer}
+                            <div>Syarat : {footer}</div>
+                            <hr/>
+                            <div style={{textAlign:"center"}}>
+                                {price  
+                                ? promo 
+                                    ? <div><span className="promo">{convertCurrencies(promo)}</span></div>
+                                    : ""
+                                : ""
+                                }
+                                <span className="" style={{
+                                    fontWeight:"bold",
+                                    fontSize:"1.2rem"
+                                }}>{convertCurrencies(price)}</span>
+                            </div>
+                            
                             <a href="https://forms.gle/enUQxF35nfJzsDhJ6" target="_blank" style={{background:"#FFDA40"}} className="mt-3 btn btn-block">
                                 Yuk daftar sekarang
                             </a>
@@ -109,7 +123,7 @@ const _minibanner = ({desc, mainTopics, footer}) =>{
 
 const _silabus=({silabus})=>{
     const [idTarget, setIdTarget] = useState("");
-    const [count, setCount] = useState(2);
+    const [isCollapse, setIsCollapse] = useState(true);
 
     const handleClick=(e)=>{
         const element = e.target;
@@ -117,26 +131,30 @@ const _silabus=({silabus})=>{
         const target = document.getElementById(id.split("#")[1]);
         if(idTarget !== id){
             setIdTarget(id);
-            // target.style.display = "inherit"
-            setCount(1);
-        } else {
-            setCount(count+1)
-            // target.style.display = "none"
         }
-        
-        if(count%2===0){
+        setIsCollapse(!isCollapse);
+
+        if(isCollapse){
             target.style.display = "inherit"
-        }
-        else {
+        } else {
             target.style.display = "none"
         }
+
+
+        
+        // if(count%2===0){
+        //     target.style.display = "inherit"
+        // }
+        // else {
+        //     target.style.display = "none"
+        // }
 
         // console.log(count)
 
     }
     
     return(
-        <div className="container mt-5">
+        <div className="container">
             <div className="row">
                 <div className="col-md-12">
                     <div 
@@ -241,7 +259,9 @@ const Kelas = (props) =>{
             <div className="wrapper">
                 <_banner footer={classData.footer} kelas={classData.nameClass}/>
                 <_bannerImage img={classData.img} />
-                <_minibanner desc={classData.desc} mainTopics={classData.mainTopics} footer={classData.footer}  />
+                <_minibanner
+                promo={classData.promo} price={classData.price}
+                 desc={classData.desc} mainTopics={classData.mainTopics} footer={classData.footer}  />
                 <_silabus silabus={classData.silabus}/>
             </div>
         </Layout>
