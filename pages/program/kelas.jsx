@@ -68,7 +68,7 @@ const _bannerImage=({img}) =>{
     )
 }
 
-const _minibanner = ({desc, mainTopics, footer, promo, price}) =>{
+const _minibanner = ({kelas, desc, mainTopics, footer, promo, price}) =>{
     return(
         <div className="container mt-5">
             <div className="row">
@@ -110,7 +110,7 @@ const _minibanner = ({desc, mainTopics, footer, promo, price}) =>{
                                 }}>{convertCurrencies(price)}</span>
                             </div>
                             
-                            <a href="https://forms.gle/enUQxF35nfJzsDhJ6" target="_blank" style={{background:"#FFDA40"}} className="mt-3 btn btn-block">
+                            <a href={"https://api.whatsapp.com/send?phone=6287716062764&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *#1* pada kelas : *"+kelas+"*"} target="_blank" style={{background:"#FFDA40"}} className="mt-3 btn btn-block">
                                 Yuk daftar sekarang
                             </a>
                         </div>
@@ -222,7 +222,7 @@ const Kelas = (props) =>{
     const get_data=(idClass)=>{
         return new Promise(async(resolve, reject)=>{
             try{
-                const uri = `https://my-json-server.typicode.com/achimonchi/mockUp/it?id=${idClass}`;
+                const uri = `http://103.214.113.109:9999/it?id=${idClass}`;
                 const res = await fetch(uri);
                 const data = await res.json();
                 // console.log(data)
@@ -260,6 +260,7 @@ const Kelas = (props) =>{
                 <_banner footer={classData.footer} kelas={classData.nameClass}/>
                 <_bannerImage img={classData.img} />
                 <_minibanner
+                kelas={classData.nameClass}
                 promo={classData.promo} price={classData.price}
                  desc={classData.desc} mainTopics={classData.mainTopics} footer={classData.footer}  />
                 <_silabus silabus={classData.silabus}/>

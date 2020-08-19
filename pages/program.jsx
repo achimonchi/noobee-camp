@@ -220,7 +220,7 @@ const Program = (props) => {
 
     const get_data=(kelas)=>{
         return new Promise(async(resolve, reject)=>{
-            const uri = "https://my-json-server.typicode.com/achimonchi/mockUp/"+kelas;
+            const uri = "http://103.214.113.109:9999/"+kelas;
             const res = await fetch(uri) ;
             const data = await res.json() ;
             
