@@ -80,7 +80,7 @@ const _minibanner = ({kelas, desc, mainTopics, footer, promo, price}) =>{
                         style={{background:"white", height:"100%"}}
                     className="content p-5" >
                         <h4 className="mb-3"><b>Tentang Kelas</b></h4>
-                        <p>{desc}</p>
+                        <p style={{textAlign:"justify"}}>{desc}</p>
                     </motion.div>
                 </div>
                 <div className="col-md-4 mb-5">
