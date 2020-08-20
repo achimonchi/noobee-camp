@@ -97,7 +97,6 @@ const _search_bar=(props)=>{
                             <form onSubmit={(e)=>props.onSubmit(e)}>
                                 <div className="input-group">
                                     <input 
-                                        autoFocus={true}
                                         value={props.search}
                                         type="text" 
                                         onChange={(e)=>props.onChange(e)}
