@@ -222,7 +222,7 @@ const Kelas = (props) =>{
     const get_data=(idClass)=>{
         return new Promise(async(resolve, reject)=>{
             try{
-                const uri = `http://103.214.113.109:9999/it?id=${idClass}`;
+                const uri = `https://dbcamp.noobee.id/it?id=${idClass}`;
                 const res = await fetch(uri);
                 const data = await res.json();
                 // console.log(data)
