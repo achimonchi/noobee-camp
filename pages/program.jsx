@@ -230,6 +230,7 @@ const Program = (props) => {
                     resolve(data)
                 }
             } catch(err){
+                setLoading(false);
                 reject(err)
             }
         })

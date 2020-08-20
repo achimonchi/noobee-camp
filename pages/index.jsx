@@ -212,7 +212,38 @@ const _program=(props)=>{
 }
 
 const _time=()=>{
-
+    return(
+        <div className="time-section" id="time">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 mt-3">
+                        <h2 className="text-header">Sudah waktunya buatmu untuk upgrade skill</h2>
+                        <p>
+                            Dengan mengusung konsep diskusi pada kelompok kecil, kamu seperti berada di suatu tim yang professional
+                        </p>
+                    </div>
+                    <div className="col-md-4 mt-3">
+                        <div className="clock mb-3">
+                            <div className="icon">
+                                <img src="./images/icon/clock.svg" alt=""/>
+                                <div className="teks ml-3">
+                                    <p><b>3 Jam</b> <br/> Persesi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="users">
+                            <div className="icon mb-3">
+                                <img src="./images/icon/users.svg" alt=""/>
+                                <div className="teks ml-3">
+                                    <p><b>5 - 6 Orang</b> <br/> Perkelompok</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 
@@ -247,6 +278,7 @@ const Index = (props) =>{
                 <_program
                     program={program}
                 />
+                <_time/>
             </motion.div>
         </Layout>
     )

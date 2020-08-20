@@ -3,7 +3,7 @@ const { default: Link } = require("next/link")
 const _footer=()=>{
     return(
         <div className="footer-section">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-md-3 mt-4">
                         <h3 className="sub-text-header">
@@ -21,12 +21,12 @@ const _footer=()=>{
                         </h3>
                         <ul>
                             <li><Link href="/"><a>FAQ</a></Link></li>
-                            <li><Link href="/"><a>Jadwal Bootcamp</a></Link></li>
+                            <li><Link href="/#time"><a>Jadwal Bootcamp</a></Link></li>
                             <li><Link href="/"><a>Kontak Kami</a></Link></li>
-                            <li><a rel="noopener" href="https://forms.gle/enUQxF35nfJzsDhJ6" target="_blank">Daftar</a></li>
+                            <li><a rel="noopener" href="https://api.whatsapp.com/send?phone=6287716062764&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1*" target="_blank">Daftar</a></li>
                         </ul>
                     </div>
-                    <div className="col-md-3 mt-4 mb-3 offset-md-3">
+                    <div className="col-md-4 mt-4 mb-3 offset-md-2">
                         <img alt="logo noobeeid" src="/images/logo.svg" className="logo-footer"/>
                         <br/>
                         <span>
