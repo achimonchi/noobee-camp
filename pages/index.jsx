@@ -155,7 +155,7 @@ const _about=()=>{
                                             NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh <b><i><a rel="noopener" href="http://noobee.id/" target="_blank">NooBeeID</a></i></b>.
                                             Dengan kurikulum yang selalu <b>up-to-date</b>, sehingga masyarakat mampu untuk bersaing di dunia kerja.
                                         </p>
-                                        <Link href="#"><a rel="noopener" target="_blank" href="https://forms.gle/enUQxF35nfJzsDhJ6"  className="btn btn-filled btn-full btn-about">Daftar sekarang</a></Link>
+                                        <Link href="#"><a rel="noopener" target="_blank" href="https://api.whatsapp.com/send?phone=6287716062764&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1*"  className="btn btn-filled btn-full btn-about">Daftar sekarang</a></Link>
                                     </div>
                                 </div>
                             </div>

@@ -220,14 +220,17 @@ const Program = (props) => {
 
     const get_data=(kelas)=>{
         return new Promise(async(resolve, reject)=>{
-            const uri = "https://dbcamp.noobee.id/"+toLowerCase(kelas);
-            const res = await fetch(uri) ;
-            const data = await res.json() ;
-            
-            if(data.length > 0){
-                resolve(data);
-            } else {
-                resolve(data)
+            try{
+                const uri = "https://dbcamp.noobee.id/"+toLowerCase(kelas);
+                const res = await fetch(uri);
+                const data = await res.json();
+                if(data.length > 0){
+                    resolve(data);
+                } else {
+                    resolve(data)
+                }
+            } catch(err){
+                reject(err)
             }
         })
     }
