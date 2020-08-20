@@ -85,7 +85,7 @@ const Navbar=({activeClass})=>{
                         </div>
                     </li>
                     <li className="nav-item">
-                        <Link href="#"><a rel="noopener" target="_blank" href="https://api.whatsapp.com/send?phone=6287716062764&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1*" className="nav-link btn-register text-dark">Daftar sekarang</a></Link>
+                        <Link href="#"><a rel="noopener" target="_blank" href="https://api.whatsapp.com/send?phone=6285156634336&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1*" className="nav-link btn-register text-dark">Daftar sekarang</a></Link>
                     </li>
                 </ul>
             </div>

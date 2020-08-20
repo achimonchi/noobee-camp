@@ -110,7 +110,7 @@ const _minibanner = ({kelas, desc, mainTopics, footer, promo, price}) =>{
                                 }}>{convertCurrencies(price)}</span>
                             </div>
                             
-                            <a href={"https://api.whatsapp.com/send?phone=6287716062764&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1* pada kelas : *"+kelas+"*"} target="_blank" style={{background:"#FFDA40"}} className="mt-3 btn btn-block">
+                            <a href={"https://api.whatsapp.com/send?phone=6285156634336&text=Saya ingin mendaftar Bootcamp di NooBeeCamp Batch *1* pada kelas : *"+kelas+"*"} target="_blank" style={{background:"#FFDA40"}} className="mt-3 btn btn-block">
                                 Yuk daftar sekarang
                             </a>
                         </div>
