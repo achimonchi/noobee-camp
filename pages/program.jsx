@@ -220,7 +220,7 @@ const Program = (props) => {
     const get_data=(kelas)=>{
         return new Promise(async(resolve, reject)=>{
             try{
-                const uri = "https://dbcamp.noobee.id/"+toLowerCase(kelas);
+                const uri = "https://mockupdata.herokuapp.com/"+toLowerCase(kelas);
                 const res = await fetch(uri);
                 const data = await res.json();
                 if(data.length > 0){
