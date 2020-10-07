@@ -22,10 +22,14 @@ const Layout = (props) =>{
                 {/* meta tag */}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-                <meta name="description" content="Lagi nyari Bootcamp? NooBeeCamp adalah suatu program Bootcamp di Pekanbaru, yang diinisiasi oleh NooBeeID."/>
+                <meta name="description" content="NooBeeCamp merupakan Coding Bootcamp yang paling Up-to-Date di Pekanbaru. Kamu akan dibekali kemampuan standard industri dan mampu bersaing di level nasional."/>
                 <meta name="google-site-verification" content="ZhBcRCIPCzRGpLMsL6-weqa-MEXXkuwWORY8_meDCCw" />
-                <meta name="keyword" content="NooBeeID, noobee.id, noobeecamp, camp.noobee.id, Bootcamp pekanbaru, Bootcamp IT Pekanbaru, Bootcamp IT"/>
-                <title>NooBeeCamp</title>
+                <meta name="keyword" content="NooBeeID, noobee.id, noobeecamp, camp.noobee.id, Bootcamp pekanbaru, Bootcamp IT Pekanbaru, Bootcamp IT, Bootcamp, Belajar Programming, bootcamp training"/>
+                <meta property="og:title" content="NooBeeCamp | Bootcamp Coding Pekanbaru"/>
+                <meta property="og:description" content="NooBeeCamp merupakan Coding Bootcamp yang paling Up-to-Date di Pekanbaru. Kamu akan dibekali kemampuan standard industri dan mampu bersaing di level nasional."/>
+                <meta property="og:site_name" content="camp.noobee.id"/>
+                <meta name="robots" content="index, follow" />
+                <title>NooBeeCamp | Bootcamp Coding Pekanbaru</title>
                 {/* link fontawesome */}
                 {/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossOrigin="anonymous"></link> */}
     
